@@ -45,6 +45,11 @@ a{
     transform: translateY(0);
 }
 .site-header{
+    background-color: var(--navy);
+    color: #ffffff;
+    padding: 1rem;
+}
+.site-header h1{
     margin: 0 0 0.75rem;
     font-size: 1.5rem;
 }
