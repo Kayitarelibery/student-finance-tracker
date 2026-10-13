@@ -30,9 +30,85 @@
         <h2 id="dashboard-title">Dashboard</h2>
         <p>Totals, top category, 7-day trend and your spending will appear here.</p>
     </section>
+    <section id="records" aria-labelledby="records-title">
+        <h2 id="records-title">Transactions</h2>
+        <div class="form field">
+            <label for="search-input">Search transactions using regex</label>
+            <input
+            type="search"
+            id="search-input"
+            placeholder="e.g. coffee|tea"
+            aria-describedby="search-help search-error"
+            >
+            <p id="search-help">Enter a regular expression to search description and categories.</p>
+            <p id="search-error" role="status" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+                <label for="sort-select">Sort transactions</label>
+                <select id="sort-select">
+                    <option value="date-desc">Date: newest first</option>
+                    <option value="date-asc">Date: oldest first</option>
+                    <option value="description-asc">Description: A-Z</option>
+                    <option value="description-desc">Description:Z-A</option>
+                    <option value="amount-asc">Amount: lowest first</option>
+                    <option value="amount-desc">Amount: highest first</option>
+                </select>
+            </div>
+            <p id="record-count" role="status" aria-live="polite">No transactions yet.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                <tbody id="records-body"></tbody>
+                </table>
+                </div>
+                </section>   
     <section id="form" aria-labelledby="form-title">
         <h2 id="form-title">Add / Edit Transaction</h2>
-        <p>The form for adding and editing a transaction will appear here.</p>
+       
+    <form id="transaction-form" novalidate>
+        <input type="hidden" id="transaction-id">
+     <div class="form-field">
+        <label for="description">Description</label>
+        <input type="type" id="description" name="description" required aria-describedby="desciption-error">
+        <p id="description-error" class="error-message"></p>
+     </div>
+     
+     <div class="form-field">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" min="0" step="0.01" required aria-describedby="amount-error">
+        <p id="amount-error" class="error-message"></p>
+     </div>
+     
+     <div class="form-field">
+        <label for="category">Category</label>
+        <select id="category" name="category" required aria-describedby="category-error">
+            <option value="">Select a category</option>
+            <option value="Food">Food</option>
+            <option value="Books">Books</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Fees">Fees</option>
+            <option value="Other">Other</option>
+        </select>
+        <p id="category-error" class="error-message"></p>
+        </div>
+        <div class="form-field">
+            <label for="date">Date</label>
+            <input type="date" id="date" required aria-describedby="date-error">
+                <p id="date-error" class="error-message"></p>
+        </div>
+        <p id="form-status" role="status" aria-live="polite"></p>            
+        <button type="submit">Save Transaction</button>
+        <button type="reset">Clear Form</button>
+    </form>
     </section>
     <section id="settings" aria-labelledby="settings-title">
         <h2 id="settings-title">Settings</h2>
@@ -41,6 +117,7 @@
     </main>
     <footer class="site-footer">
         <p>Student Finance Tracker &copy; 2026</p>
-    </footer>                
+    </footer>   
+    <script type="module" src="scripts/form.js"></script>             
 </body>
 </html> 

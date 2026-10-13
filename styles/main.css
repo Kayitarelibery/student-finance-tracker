@@ -134,3 +134,67 @@ main h2{
         transition: none;
     }
 }
+.form-field{
+    margin-bottom: 1rem;
+}
+.form-field label{
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: bold;
+}
+.form-field input,
+.form-field select{
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: inherit;
+}
+.error-message{
+    color: #b42318;
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+}
+#form-status{
+    margin-top: 1rem;
+}
+#transaction-form button{
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th,
+td{
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+th{
+    background-color: var(--navy);
+    color: #ffffff;
+}
+tbody tr:hover{
+    background-color: var(--bg);
+}
+mark{
+    background-color: #ffdf80;
+    color: #1a1a1a;
+    padding: 0.05rem;
+}
+@media (max-media: 767px){
+th,
+td{
+    padding:0.5rem;
+}
+}

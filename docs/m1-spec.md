@@ -1,11 +1,9 @@
-The Student Finance Tracker is a no-cost, one-time purchase.The Student Finance Tracker is a single purchase, no cost.
-
+The Student Finance Tracker is a no-cost, one time purchase.The Student Finance Tracker is a single purchase, no cost.
 ## What I'm building
-I'm working on a simple web application to assist students in monitoring their expenditures. It is possible to add what you have spent, search through it and get a quick overview of where your money has gone. There's no account or server, everything is saved in your browser! Working with plain HTML, CSS and JavaScript (no frameworks).
-
+I'm working on a simple web application to assist students in monitoring their expenditures. It is possible to add what you have spent, search through it and get a quick overview of where your money has gone. There's no account or server, everything is saved in your browser! Working with plain HTML, CSS and Javascript
 ## What a record looks like
 These will be included in each transaction that I save:
-
+ 
 | Field | What it is |
 |---|---|
 | id | A unique code for the record, like `rec_0001` |

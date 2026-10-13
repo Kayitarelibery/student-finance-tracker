@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title> Validation Tests</title>
+</head>
+<body>
+    <main>
+        <h1>Student Finance Tracker - Tests</h1>
+        <ul id="test-results" aria-live="polite"></ul>
+    </main>
+    <script type="module">
+    import{
+        validateDescription,
+        validateAmount,
+        validateDate,
+        validateCategory,
+        hasDuplicateWord
+    } from "./scripts/validators.js";
+    const tests = [
+        ["Valid description", validateDescription("Lunch at school"), true],
+        ["Description with leading space", validateDescription(" Lunch"), false],
+        ["Valid amount", validateAmount("25.50"), true],
+        ["Amount with too many decimals", validateAmount("25.555"), false],
+        ["Valid date format", validateDate("2026-10-13"), true],
+        ["Invalid month", validateDate("2026-13-13"), false],
+        ["Valid category", validateCategory("Bus Fare"), true],
+        ["Invalid category", validateCategory("Food123"), false],
+        ["Repeated word detected",hasDuplicateWord("coffee coffee"), true]
+    ];
+    const results = document.getElementById("test-results");
+    tests.forEach(([name, actual, expected]) => {
+const item = document.createElement("li");
+const passed = actual === expected;
+item.textContent = `${passed ? "PASS" : "FAIL"}: ${name}`;
+results.appendChild(item);
+});
+</script>
+</body>
+</html>        
