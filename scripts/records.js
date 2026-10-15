@@ -1,3 +1,4 @@
+import { updateDashboard } from "./dashboard.js";
 const recordsBody = document.getElementById("records-body");
 const searchInput = document.getElementById("search-input");
 const searchError = document.getElementById("search-error");
@@ -10,6 +11,7 @@ let onChange = () => {};
 export function setTransactions(data){
     transactions = data;
     renderRecords();
+    updateDashboard(transactions);
 }
 export function setRecordCallbacks(callbacks){
     onEdit = callbacks.onEdit || (() => {});

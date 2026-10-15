@@ -28,11 +28,40 @@
     
     <section id="dashboard" aria-labelledby="dashboard-title">
         <h2 id="dashboard-title">Dashboard</h2>
-        <p>Totals, top category, 7-day trend and your spending will appear here.</p>
+    <div class="dashboard-grid">
+        <article class="stat-card">
+            <h3>Total spending</h3>
+            <p id="total-spending">0.00</p>
+        </article>
+        <article class="stat-card">
+            <h3>Transactions</h3>
+            <p id="total-transactions">0</p>
+        </article>
+        <article class="stat-card">
+            <h3>Top Category</h3>
+            <p id="top-category">None yet</p>
+        </article>
+        <article class="stat-card">
+            <h3>Last 7 Days</h3>
+            <p id="weekly-spending">0.00</p>
+        </article>
+    </div>
+    <section aria-labelledby="category-summary-title">
+        <h3 id="category-summary-title">Spending by category</h3>
+        <ul id="category-summary">
+            <li>No spending recorded yet</li>
+        </ul>
+    </section>
+    <section aria-labelledby="cap-summary-title">
+        <h3 id="cap-summary-title">Spending Cap</h3>
+        <p>Cap: <span id="spending-cap">Not set</span></p>
+        <p>Remaining: <span id="remaining-budget">Not set</span></p>
+        <p id="cap-status" role="status" aria-live="polite"></p>
+    </section>            
     </section>
     <section id="records" aria-labelledby="records-title">
         <h2 id="records-title">Transactions</h2>
-        <div class="form field">
+        <div class="form-field">
             <label for="search-input">Search transactions using regex</label>
             <input
             type="search"
@@ -77,7 +106,7 @@
         <input type="hidden" id="transaction-id">
      <div class="form-field">
         <label for="description">Description</label>
-        <input type="type" id="description" name="description" required aria-describedby="desciption-error">
+        <input type="text" id="description" name="description" required aria-describedby="description-error">
         <p id="description-error" class="error-message"></p>
      </div>
      
@@ -112,7 +141,19 @@
     </section>
     <section id="settings" aria-labelledby="settings-title">
         <h2 id="settings-title">Settings</h2>
-        <p>Spending cap, currencies, categories and JSON import/export will appear here.</p>
+        <div class="form-field">
+            <label for="spending-cap-input">Monthly spending cap</label>
+            <input
+               type="number"
+               id="spending-cap-input"
+               min="0.01"
+               step="0.01"
+               placeholder="e.g. 50000"
+            >
+        </div>
+        <button type="button" id="save-spending-cap">Set Spending Cap</button>
+        <p id="settings-status" role="status" aria-live="polite"></p>
+        <p>Currency settings and JSON import/export will be added later.</p>    
     </section>
     </main>
     <footer class="site-footer">
