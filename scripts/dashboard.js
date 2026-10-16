@@ -12,7 +12,12 @@ const spendingCapInput = document.getElementById("spending-cap-input");
 const saveCapButton = document.getElementById("save-spending-cap");
 const settingsStatus = document.getElementById("settings-status");
 
-let spendingCap = null;
+let spendingCap = Number(
+    localStorage.getItem("studentFinanceTrackerSpendingCap")
+);
+if(!Number.isFinite(spendingCap) || spendingCap <= 0){
+    spendingCap = null;
+}
 let currentTransactions = [];
 function formatMoney(amount){
     const currency = localStorage.getItem("studentFinanceTrackerCurrency") || "RWF";
@@ -98,6 +103,10 @@ saveCapButton.addEventListener("click", () =>{
         return;
     }
     spendingCap = cap;
+    localStorage.setItem(
+        "studentFinanceTrackerSpendingCap",
+        String(spendingCap)
+    );
     settingsStatus.textContent = "Spending cap set successfully.";
     const total = currentTransactions.reduce(
         (sum, transaction) => sum + Number(transaction.amount),

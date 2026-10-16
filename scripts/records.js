@@ -112,11 +112,19 @@ function renderRecords(){
         const editButton = document.createElement("button");
         editButton.type = "button";
         editButton.textContent  = "Edit";
+        editButton.setAttribute(
+            "aria-label",
+            `Edit transaction: ${transaction.description}`
+        );
         editButton.addEventListener("click", () => onEdit(transaction));
 
         const deleteButton = document.createElement("button");
         deleteButton.type = "button";
         deleteButton.textContent = "delete";
+        deleteButton.setAttribute(
+            "aria-label",
+            `Delete transaction: ${transaction.description}`
+        );
         deleteButton.addEventListener("click", () =>{
             if (confirm(`Delete "${transaction.description}"?`)){
                 transactions = transactions.filter(
