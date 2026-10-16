@@ -1,4 +1,8 @@
 import { updateDashboard } from "./dashboard.js";
+import { getCurrency } from "./settings.js";
+import { saveTransactions,
+         loadTransactions
+ } from "./storage.js";
 const recordsBody = document.getElementById("records-body");
 const searchInput = document.getElementById("search-input");
 const searchError = document.getElementById("search-error");
@@ -10,6 +14,7 @@ let onChange = () => {};
 
 export function setTransactions(data){
     transactions = data;
+    saveTransactions(transactions);
     renderRecords();
     updateDashboard(transactions);
 }
@@ -88,7 +93,10 @@ function renderRecords(){
         row.appendChild(descriptionCell);
 
         const amountCell = document.createElement("td");
-        amountCell.textContent = Number(transaction.amount).toFixed(2);
+        amountCell.textContent = new Intl.NumberFormat("en",{
+            style: "currency",
+            currency: getCurrency()
+        }).format(Number(transaction.amount));
         row.appendChild(amountCell);
 
         const categoryCell = document.createElement("td");
@@ -127,3 +135,7 @@ function renderRecords(){
 searchInput.addEventListener("input", renderRecords);
 sortSelect.addEventListener("change", renderRecords);
 export {renderRecords};
+setTransactions(loadTransactions());
+export function getTransactions(){
+    return transactions;
+}

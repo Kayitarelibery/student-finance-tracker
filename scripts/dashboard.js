@@ -14,13 +14,20 @@ const settingsStatus = document.getElementById("settings-status");
 
 let spendingCap = null;
 let currentTransactions = [];
+function formatMoney(amount){
+    const currency = localStorage.getItem("studentFinanceTrackerCurrency") || "RWF";
+    return new Intl.NumberFormat("en",{
+        style: "currency",
+        currency
+    }).format(Number(amount));
+}
 export function updateDashboard(transactions){
     currentTransactions = transactions;
     const total = transactions.reduce(
         (sum, transaction) => sum + Number(transaction.amount),
         0
     );
-    totalSpending.textContent = total.toFixed(2);
+    totalSpending.textContent = formatMoney(total);
     totalTransactions.textContent = transactions.length;
     const categoryTotals = {};
     transactions.forEach(transaction =>{
@@ -41,7 +48,7 @@ export function updateDashboard(transactions){
         categorySummary.replaceChildren();
         categories.forEach(([category, amount])=>{
             const item = document.createElement("li");
-            item.textContent = `${category}: ${amount.toFixed(2)}`;
+            item.textContent = `${category}: ${formatMoney(amount)}`;
             categorySummary.appendChild(item);
         });
     }
@@ -60,7 +67,7 @@ export function updateDashboard(transactions){
         (sum, transaction) => sum + Number(transaction.amount),
         0
     );
-    weeklySpending.textContent = weeklyTotal.toFixed(2);
+    weeklySpending.textContent = formatMoney(weeklyTotal);
     updateSpendingCap(total);
 }
 function updateSpendingCap(total){
@@ -72,14 +79,14 @@ function updateSpendingCap(total){
     }
     const remaining = spendingCap - total;
 
-    spendingCapDisplay.textContent = spendingCap.toFixed(2);
-    remainingBudgetDisplay.textContent = remaining.toFixed(2);
+    spendingCapDisplay.textContent = formatMoney(spendingCap);
+    remainingBudgetDisplay.textContent = formatMoney(remaining);
     if(remaining < 0){
-        capStatus.textContent = `You have exceeded your cap by ${Math.abs(remaining).toFixed(2)}.`;   
+        capStatus.textContent = `You have exceeded your cap by ${formatMoney(Math.abs(remaining))}.`;   
     } else if (remaining === 0){
         capStatus.textContent = "You have reached your spending cap.";
     }else {
-        capStatus.textContent = `${remaining.toFixed(2)} remaining in your spending cap.`;
+        capStatus.textContent = `${formatMoney(remaining)} remaining in your spending cap.`;
     }
 }
 saveCapButton.addEventListener("click", () =>{

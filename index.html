@@ -150,15 +150,35 @@
                step="0.01"
                placeholder="e.g. 50000"
             >
+         </div> 
+         <button type="button" id="save-spending-cap">Set Spending Cap</button>
+         <p id="settings-status" role="status" aria-live="polite"></p>
+         <p>Manage your spending cap, back up your transactions, and restore records from a JSON file.</p>  
+        <div class="form-field">
+            <label for="currency-select">Display currency</label>
+            <select id="currency-select">
+                <option value="RWF">Rwandan Franc (RWF)</option>
+                <option value="USD">US Dollar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="KES">Kenyan Shilling (KES)</option>
+            </select>
         </div>
-        <button type="button" id="save-spending-cap">Set Spending Cap</button>
-        <p id="settings-status" role="status" aria-live="polite"></p>
-        <p>Currency settings and JSON import/export will be added later.</p>    
+        <p id="currency-status" role="status" aria-live="polite"></p>        
+         <h3>Data Backup</h3>
+        <div class="backup-controls">
+            <button type="button" id="export-data">Export Transactions</button>
+            <label for="import-file">Import Transactions (JSON)</label>
+            <input type="file" id="import-file" accept=".json,application/json">
+            <button type="button" id="import-data">Import Transactions</button>
+            <p id="backup-status" role="status" aria-live="polite"></p>    
+        </div>    
     </section>
     </main>
     <footer class="site-footer">
         <p>Student Finance Tracker &copy; 2026</p>
     </footer>   
-    <script type="module" src="scripts/form.js"></script>             
+    <script type="module" src="scripts/form.js"></script>
+    <script type="module" src="scripts/backup.js"></script> 
+    <script type="module" src="scripts/settings.js"></script>            
 </body>
 </html> 

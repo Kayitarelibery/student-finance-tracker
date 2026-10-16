@@ -7,8 +7,10 @@ import {
 } from "./validators.js";
 import { 
     setTransactions,
-    setRecordCallbacks 
+    setRecordCallbacks, 
+    getTransactions
 } from "./records.js";
+let transactions = getTransactions();
 const form = document.getElementById("transaction-form");
 const fields = {
     description: document.getElementById("description"),
@@ -29,7 +31,6 @@ const messages ={
     category: "Choose a valid category.",
     date: "Enter a date in YYYY-MM-DD format."
 };
-let transactions = [];
 let editingId = null;
 setRecordCallbacks({
     onEdit: (transaction) =>{
@@ -68,6 +69,7 @@ Object.keys(fields).forEach(name =>{
 });
 form.addEventListener("submit", event =>{
     event.preventDefault();
+    transactions = getTransactions();
     const results = Object.keys(fields).map(validateField);
     const description = fields.description.value;
     if(hasDuplicateWord(description)){

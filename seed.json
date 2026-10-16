@@ -1,0 +1,92 @@
+[
+    {
+        "id": "seed-001",
+        "description": "Lunch at campus",
+        "amount": 3000,
+        "category": "Food",
+        "date": "2026-10-01",
+        "createAt": "2026-10-01T10:00:00.000Z",
+        "updateAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+        "id": "seed-002",
+        "description": "Bus fare",
+        "amount": 1000,
+        "category": "Transport",
+        "date": "2026-10-02",
+        "createAt": "2026-10-02T08:00:00.000Z",
+        "updateAt": "2026-10-02T08:00:00.000Z"
+    },
+    {
+        "id": "seed-003",
+        "description": "Business textbook",
+        "amount": 8500,
+        "category": "Books",
+        "date": "2026-10-03",
+        "createAt": "2026-10-03T09:00:00.000Z",
+        "updateAt": "2026-10-03T09:00:00.000Z"
+    },
+    {
+        "id": "seed-004",
+        "description": "University supplies",
+        "amount": 4500,
+        "category": "Other",
+        "date": "2026-10-04",
+        "createAt": "2026-10-04T11:00:00.000Z",
+        "updateAt": "2026-10-04T11:00:00.000Z"
+    },
+    {
+        "id": "seed-005",
+        "description": "Movie ticket",
+        "amount": 2500,
+        "category": "Entertainment",
+        "date": "2026-10-05",
+        "createAt": "2026-10-05T14:00:00.000Z",
+        "updateAt": "2026-10-05T14:00:00.000Z"
+    },
+    {
+        "id": "seed-006",
+        "description": "Course fees",
+        "amount": 25000,
+        "category": "Fees",
+        "date": "2026-10-06",
+        "createAt": "2026-10-06T09:00:00.000Z",
+        "updateAt": "2026-10-06T09:00:00.000Z"
+    },
+    {
+        "id": "seed-007",
+        "description": "Groceries",
+        "amount": 6500,
+        "category": "Food",
+        "date": "2026-10-08",
+        "createAt": "2026-10-08T16:00:00.000Z",
+        "updateAt": "2026-10-08T16:00:00.000Z"
+    },
+    {
+        "id": "seed-008",
+        "description":"Motorcycle transport",
+        "amount": 1500,
+        "category": "Transport",
+        "date": "2026-10-10",
+        "createAt": "2026-10-10T07:00:00.000Z",
+        "updateAt": "2026-10-10T07:00:00.000Z"
+    },
+    {
+        "id": "seed-009",
+        "description": "Notebook and pens",
+        "amount": 2000,
+        "category": "Books",
+        "date": "2026-10-12",
+        "createAt": "2026-10-12T12:00:00.000Z",
+        "updateAt": "2026-10-12T12:00:00.000Z"
+    },
+    {
+        "id": "seed-010",
+        "description": "Weekend meal",
+        "amount": 4000,
+        "category": "Food",
+        "date": "2026-10-14",
+        "createAt": "2026-10-14T13:00:00.000Z",
+        "updateAt": "2026-10-14T13:00:00.000Z"
+    }
+]
