@@ -220,3 +220,13 @@ td{
     font-weight: bold;
     overflow-wrap: anywhere;
 }
+.site-title{
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.site-header{
+    text-align: center;
+}
