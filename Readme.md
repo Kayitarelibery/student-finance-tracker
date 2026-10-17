@@ -83,6 +83,10 @@ Transaction data is stored in the browser's local storage.xport important data r
 
 Work in progress, built milestons by milestone (M1 TO M7)
 
+## Demo Video
+
+https://youtu.be/DLzEHGdOe-E
+
 # Author
 
 Kayitarelibery

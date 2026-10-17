@@ -1,0 +1,6 @@
+8dd7dd9 (HEAD -> main, origin/main) Add website title to header
+c42b11d Update project documentation
+3f09285 Improve accessibility and persist spending cap
+c66735b Complete M6 storage and currency features
+627c259 Complete M5 dashboard and spending cap
+:
